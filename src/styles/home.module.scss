@@ -1,0 +1,117 @@
+@import "./variables";
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@600&family=Montserrat:wght@200&family=Noto+Sans&family=Open+Sans&family=Outfit:wght@200&family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
+
+.Home{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    @media(max-width:1300px){
+        display: flex;
+    flex-direction: column;
+    height: 100%;
+    }
+}
+
+.outterHome{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(236, 236, 236, 0.253);
+    width: 60%;
+    height: 100vh;
+    .logo{
+        margin: 20px 0px 0px 50px;
+        width: 100px;
+        height: 25px;
+    }
+    h1{
+        margin: 29px;
+    }
+    h1{
+        font-size: 50px;
+        font-family: 'Noto Sans', sans-serif;
+        @media (max-width:700px) {
+            font-size: 30px;
+        }
+    }
+    p{
+        margin-left: 29px;
+        margin-right: 29px;
+        word-spacing: 4px;
+        color: gray;
+        font-size: 20px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+        @media (max-width:700px) {
+            font-size: 12px;
+        }
+    }
+    @media (max-width:1300px){
+        
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(236, 236, 236, 0.253);
+        width: -moz-fit-content;
+        width: 100%;
+        height: auto;
+
+    }
+}
+
+.innerHome{
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+    margin-top: 40px;
+    margin-left: 100px;
+    width: 69%;
+    height: 100%;
+    @media (max-width:1300px){
+        display: flex;
+        flex-direction: column;
+        vertical-align: middle;
+        margin-top: 40px;
+        margin-left: 20px;
+        width: 69%;
+        height: 100%;
+    }
+    img{
+        margin-top: 29px;
+        width: auto;
+        height:100%;
+    }
+}
+.sideHome{
+    display: flex;
+    width: 40%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    @media (max-width:1300px) {
+        display: flex;
+        width: 100%;
+    }
+}
+.left_side_bar{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .left_side_bar_inner{
+        display: flex;
+    flex-direction: column;
+    
+    margin-left: 30px;
+    }
+}
+.left_side_bar_Dark{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    // background-color:rgba(0, 0, 0, 0.753);
+    background-color:  #2E353D;
+    .left_side_bar_inner{
+        display: flex;
+    flex-direction: column;
+    
+    margin-left: 30px;
+    }
+}

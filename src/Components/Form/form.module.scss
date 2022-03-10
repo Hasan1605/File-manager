@@ -1,0 +1,256 @@
+@import "../../styles/variables";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Noto+Sans&family=Outfit:wght@200&family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+    height: 390px;
+    border: inset 0px black;
+    width: 480px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 20px;
+    outline: 0px initial black;
+    margin: 40px;
+    box-shadow:  0px 0px 13px 1px;
+    
+    @media (max-width:500px) {
+        height: auto;
+        width:250px;
+        height: 250px; 
+    }
+    @media (max-width:1300px) {
+        margin-top:30px;
+    }
+    .formInner{
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        height: fit-content;
+        margin: 0px 50px 0px 50px;
+        label{
+            margin:0px 0px 5px 30px;
+            font-size: medium;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        div{
+            display: flex;
+            width: 400px;
+            margin:0px 0px 40px 18px;
+            overflow: hidden;
+            align-items: center;
+            height:40px;
+            border-radius: 20px;
+            border:inset 0.5px rgba(128, 128, 128, 0.3);
+            box-shadow: 0px 0px 5px 0px rgb(116, 109, 109);
+            outline: white none 0px;
+            @media (max-width:500px) {
+                width: 200px;
+                margin:0px 0px 20px 30px;
+            }
+        }
+        input{
+            margin-left: 16px;
+            border-radius: 2px;
+            outline: white none 0px;
+            border:inset 0px rgba(128, 128, 128, 0.3);
+            font-size: 16px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            @media (max-width:500px) {
+                width: 180px;
+            }
+        }
+        button{
+            width: 100%;
+            margin: 30px;
+            border-radius: 2px;
+            border:inset 0.5px rgba(128, 128, 128, 0.3);
+            box-shadow: 0px 0px 5px 0px rgb(116, 109, 109);
+            background-color: #4361ee;
+            outline: white none 0px;
+            color: white;
+            font-size: 15px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            &:active{
+                box-shadow: 0px 0px 0px 0px rgb(116, 109, 109);
+            }
+            &:hover{
+                background-color:$bg-blue-faded;
+            }
+            @media (max-width:500px) {
+                width: 200px;
+                margin:0px 0px 10px 30px;
+            }
+        }
+}
+.formInnerInner{
+    display: flex;
+    width: 400px;
+    
+    align-items: center;
+    // height:40px;
+    
+    button{
+        width: 100%;
+        height:40px;
+        margin: 30px;
+        border-radius: 20px;
+        border:inset 0.5px rgba(128, 128, 128, 0.3);
+        box-shadow: 0px 0px 10px 1px rgb(116, 109, 109);
+        background-color: #4361ee;
+        outline: white none 0px;
+        color: white;
+        font-size: 15px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        &:active{
+            box-shadow: 0px 0px 0px 0px rgb(116, 109, 109);
+        }
+        &:hover{
+            background-color:$bg-blue-faded;
+        }
+        @media (max-width:500px) {
+            width: 200px;
+            margin:0px 0px 10px 30px;
+        }
+    }
+    @media (max-width:500px) {
+        width: 200px;
+        margin:0px 0px 20px 30px;
+    }
+}
+
+}
+
+.formDark{
+    display: flex;
+    flex-direction: column;
+    height: 390px;
+    border: inset 0px black;
+    width: 480px;
+    align-items: center;
+    justify-content: center;
+    background-color: #2E353D;
+    border-radius: 20px;
+    outline: 0px initial black;
+    margin: 40px;
+    box-shadow:  0px 0px 13px 1px;
+    
+    @media (max-width:500px) {
+        height: auto;
+        width:250px;
+        height: 250px; 
+    }
+    @media (max-width:1300px) {
+        margin-top:30px;
+    }
+    .formInner{
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        height: fit-content;
+        margin: 0px 50px 0px 50px;
+        // background-color: white;
+        label{
+            margin:0px 0px 5px 30px;
+            font-size: medium;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: white;
+        }
+        div{
+            display: flex;
+            width: 400px;
+            margin:0px 0px 40px 18px;
+            background-color: white;
+            overflow: hidden;
+            align-items: center;
+            height:40px;
+            border-radius: 20px;
+            border:inset 0.5px rgba(128, 128, 128, 0.3);
+            box-shadow: 0px 0px 5px 0px rgb(116, 109, 109);
+            outline: white none 0px;
+            color: white;
+            @media (max-width:500px) {
+                width: 200px;
+                margin:0px 0px 20px 30px;
+            }
+        }
+        input{
+            margin-left: 16px;
+            border-radius: 2px;
+            outline: white none 0px;
+            border:inset 0px rgba(128, 128, 128, 0.3);
+            font-size: 16px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            @media (max-width:500px) {
+                width: 180px;
+            }
+        }
+        button{
+            width: 100%;
+            margin: 30px;
+            border-radius: 2px;
+            border:inset 0.5px rgba(128, 128, 128, 0.3);
+            box-shadow: 0px 0px 5px 0px rgb(116, 109, 109);
+            background-color: #4361ee;
+            outline: white none 0px;
+            color: white;
+            font-size: 15px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            &:active{
+                box-shadow: 0px 0px 0px 0px rgb(116, 109, 109);
+            }
+            &:hover{
+                background-color:$bg-blue-faded;
+            }
+            @media (max-width:500px) {
+                width: 200px;
+                margin:0px 0px 10px 30px;
+            }
+        }
+}
+.formInnerInner{
+    display: flex;
+    width: 400px;
+    
+    align-items: center;
+    // height:40px;
+    
+    button{
+        width: 100%;
+        height:40px;
+        margin: 30px;
+        border-radius: 20px;
+        border:inset 0.5px rgba(128, 128, 128, 0.3);
+        box-shadow: 0px 0px 14px 2px rgb(116, 109, 109);
+        background-color: white;
+        outline: white none 0px;
+        color: black;
+        font-size: 15px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        &:active{
+            box-shadow: 0px 0px 0px 0px rgb(116, 109, 109);
+        }
+        &:hover{
+            background-color:rgb(158, 158, 158);
+        }
+        @media (max-width:500px) {
+            width: 200px;
+            margin:0px 0px 10px 30px;
+        }
+    }
+    @media (max-width:500px) {
+        width: 200px;
+        margin:0px 0px 20px 30px;
+    }
+}
+}

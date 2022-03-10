@@ -1,17 +1,44 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { GlobalStyles } from './global-styles';
+if (localStorage.getItem('CompleteStructure') === null) {
+  localStorage.setItem('CompleteStructure', JSON.stringify(
+    {
+      childNodes: [
+        {
+          name: "My Files",
+          path: [0],
+          key: "ghdjm",
+          insearch: 0,
+          childNodes: [
 
+          ],
+          Files: []
+        }
+      ],
+      Files: []
+    },
+
+
+  )
+  );
+}
+if (localStorage.getItem('storedValues') === null) {
+  localStorage.setItem('storedValues', JSON.stringify([
+    { firstone: "My Files", secondone: [0], type: "Folder" },
+  ]));
+}
+
+localStorage.setItem('Add_folder', false);
+localStorage.setItem('Add_file', false);
+localStorage.setItem('currentpath', JSON.stringify([]));
 ReactDOM.render(
   <React.StrictMode>
+    <GlobalStyles />
     <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
