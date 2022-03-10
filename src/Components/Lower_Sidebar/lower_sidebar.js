@@ -41,7 +41,7 @@ export default function Lower_sidebar(props) {
         return (<>
             <div className={styles.Input_main}>
                 <div className={styles.file_showing_div}>
-                    <h1 style={{ margin: "20px", borderBottom: "solid 1px grey" }}>{props.value.title}</h1>
+                    <h1 style={{ margin: "20px", borderBottom: "solid 1px grey", textAlign: "center" }}>{props.value.title}</h1>
                     <div className={styles.file_showing_div_inner}>
                         <textarea value={value} onChange={(event) => {
                             var x = event.target.value;
