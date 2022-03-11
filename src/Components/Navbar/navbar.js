@@ -28,7 +28,7 @@ export default function Navbar(props) {
                 <div className={styles.navbar_main_inner}>
                     <div className={styles.navbar_left_outer} >
                         <div className={styles.navbar_left} onClick>
-                            <IoIosSearch style={{ marginLeft: "15px" }} /><input value={value} placeholder="Search Files or Folders" onChange={(event) => { if (event.target.value === "") { setshow(false) } else { setshow(true); } setsearchTerms(event.target.value); setvalue(event.target.value) }}></input>
+                            <IoIosSearch style={{ marginLeft: "15px" }} /><input value={value} style={reader.mode ? {} : { color: "white" }} placeholder="Search Files or Folders" onChange={(event) => { if (event.target.value === "") { setshow(false) } else { setshow(true); } setsearchTerms(event.target.value); setvalue(event.target.value) }}></input>
                         </div>
                         {show && <div className={styles.navbar_innertwo_inner}>
                             {
