@@ -39,15 +39,14 @@ export default function Div_input(props) {
                     }
                 }}>Cancel</button>
                 <button onClick={() => {
+                    var Foldername = input
+                    var path_reader = reader.path_reader;
+                    var len = (path_reader.length);
+                    var changed = JSON.parse(localStorage.getItem('CompleteStructure'));
+                    var variable = changed;
+                    var assign = JSON.parse(localStorage.getItem('storedValues'))
+                    var newPath = path_reader;
                     if (props.Type === "File") {
-                        var assign = JSON.parse(localStorage.getItem('storedValues'))
-                        var Foldername = input
-                        var path_reader = reader.path_reader;
-                        var len = (path_reader.length);
-                        var changed = JSON.parse(localStorage.getItem('CompleteStructure'));
-                        var variable = changed;
-                        var newPath = path_reader;
-
                         if (len === 0) {
                             changed.Files.push({
                                 name: Foldername,
@@ -105,14 +104,13 @@ export default function Div_input(props) {
 
                     }
                     else {
-                        var Foldername = input;
-                        console.log(Foldername);
-                        var path_reader = reader.path_reader;
-                        var newPath = path_reader;
-                        var len = (path_reader.length);
-                        var changed = JSON.parse(localStorage.getItem('CompleteStructure'));
-                        var assign = JSON.parse(localStorage.getItem('storedValues'))
-                        var variable = changed;
+                        // var Foldername = input;
+                        // var path_reader = reader.path_reader;
+                        // var len = (path_reader.length);
+                        // var changed = JSON.parse(localStorage.getItem('CompleteStructure'));
+                        // var variable = changed;
+                        // var assign = JSON.parse(localStorage.getItem('storedValues'))
+                        // var newPath = path_reader;
                         if (len === 0) {
 
                             newPath.push(changed.childNodes.length);
@@ -128,7 +126,7 @@ export default function Div_input(props) {
                         }
                         else if (len === 1) {
 
-                            var lenvar = len;
+                            lenvar = len;
                             newPath.push(changed.childNodes[newPath[0]].childNodes.length)
                             changed.childNodes[path_reader[0]].childNodes.push({
                                 name: Foldername,
@@ -144,7 +142,7 @@ export default function Div_input(props) {
                         }
                         else {
                             changed = changed.childNodes[newPath[0]].childNodes;
-                            var lenvar = len - 1;
+                            lenvar = len - 1;
                             while (lenvar !== 0) {
                                 changed = changed[path_reader[len - lenvar]].childNodes;
                                 console.log(changed);
@@ -161,7 +159,7 @@ export default function Div_input(props) {
                             });
                             localStorage.setItem('CompleteStructure', JSON.stringify(variable));
                         }
-                        var addNewFolder = JSON.parse(localStorage.getItem('storedValues'));
+                        addNewFolder = JSON.parse(localStorage.getItem('storedValues'));
                         addNewFolder.push({
                             firstone: Foldername,
                             secondone: newPath,

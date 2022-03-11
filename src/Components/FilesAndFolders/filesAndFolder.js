@@ -61,7 +61,7 @@ function FirstDivInner(props) {
 }
 
 function Div(props) {
-    const reader = useContext(Context);
+
     return (<>
         {
             props.File.map((file, key) => {
@@ -97,7 +97,7 @@ export default function FilesandFolders(props) {
                                         reader.update();
                                     } else {
                                         var x = path_reader;
-                                        while (x.length != len) {
+                                        while (x.length !== len) {
                                             x.pop()
                                         }
                                         localStorage.setItem('currentpath', JSON.stringify(x));
@@ -120,7 +120,7 @@ export default function FilesandFolders(props) {
         <div className={props.mode ? styles.main : styles.main_Dark}>
             {
                 JSON.parse(localStorage.getItem('CompleteStructure')).childNodes.map((Structure, key) => {
-                    { console.log(key); }
+
                     return (
                         <>
                             <div className={styles.Folders_div} style={len_main > 0 && path_reader[0] === key ? { backgroundColor: background } : {}} onClick={() => {

@@ -15,7 +15,7 @@ export default function Lock(props) {
         var z = (event.nativeEvent.data);
         console.log(y);
 
-        if (x == "input1") {
+        if (x === "input1") {
             if (y === "insertText") {
                 const nextfield = document.querySelector(
                     'input[name=input2]'
@@ -30,7 +30,7 @@ export default function Lock(props) {
             }
 
         }
-        else if (x == "input2") {
+        else if (x === "input2") {
             if (y === "insertText") {
 
                 const nextfield = document.querySelector(
@@ -52,7 +52,7 @@ export default function Lock(props) {
             }
 
         }
-        else if (x == "input3") {
+        else if (x === "input3") {
             if (y === "insertText") {
                 setinput3(z);
                 const nextfield = document.querySelector(
@@ -75,7 +75,7 @@ export default function Lock(props) {
                 setinput3("");
             }
         }
-        else if (x == "input4") {
+        else if (x === "input4") {
             if (y === "insertText") {
                 setinput4(z);
             }

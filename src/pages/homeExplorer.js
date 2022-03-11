@@ -3,7 +3,7 @@ import Sidebar from "../Components/Sidebar/sidebar"
 import Navbar from "../Components/Navbar/navbar";
 import Lock from "../Components/Lock/Lock";
 import styles from "../styles/home.module.scss"
-import Lower_sidebar from "../Components/Lower_Sidebar/lower_sidebar";
+import LowerSidebar from "../Components/Lower_Sidebar/lower_sidebar";
 import Form from "../Components/Form/Form";
 import Context from "../Components/Context/Context";
 import DivInput from "../Components/Div_Input/Div_input";
@@ -44,7 +44,7 @@ export default function HomeExplorer() {
             <div className={Mode ? styles.left_side_bar : styles.left_side_bar_Dark}>
                 <div className={styles.left_side_bar_inner}>
                     <Navbar reset={() => { setreset(true); first.Changeopac(true) }} />
-                    <Lower_sidebar mode={Mode} />
+                    <LowerSidebar mode={Mode} />
                 </div>
             </div>
         </div >

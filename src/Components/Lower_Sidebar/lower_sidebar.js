@@ -103,7 +103,6 @@ export default function Lower_sidebar(props) {
         return (<>
             {
                 props.File.map((file, key) => {
-                    { console.log(key); }
                     return (<>
                         <DivInner file={file} Wholefile={props.File} num={key} marg={props.marg} />
                     </>)

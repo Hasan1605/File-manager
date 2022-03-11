@@ -3,7 +3,7 @@ import styles from "./navbar.module.scss"
 import { IoIosAddCircleOutline, IoIosSunny, IoIosSearch, IoIosMoon } from "react-icons/io";
 import { FiSettings } from "react-icons/fi"
 import { RiFolder3Fill, RiFile2Fill } from "react-icons/ri";
-import DivInput from "../Div_Input/Div_input";
+
 import Context from "../Context/Context";
 
 
@@ -12,7 +12,7 @@ export default function Navbar(props) {
     const [searchTerms, setsearchTerms] = useState("");
     const [addbutton, setaddButton] = useState(false);
 
-    const [index, setindex] = useState("0");
+
     const [show, setshow] = useState(false)
 
     const [value, setvalue] = useState("");
@@ -28,7 +28,7 @@ export default function Navbar(props) {
                 <div className={styles.navbar_main_inner}>
                     <div className={styles.navbar_left_outer} >
                         <div className={styles.navbar_left} onClick>
-                            <IoIosSearch style={{ marginLeft: "15px" }} /><input value={value} placeholder="Search Files or Folders" onChange={(event) => { if (event.target.value === "") { setshow(false) } else { setshow(true); } setsearchTerms(event.target.value); setindex("100"); setvalue(event.target.value) }}></input>
+                            <IoIosSearch style={{ marginLeft: "15px" }} /><input value={value} placeholder="Search Files or Folders" onChange={(event) => { if (event.target.value === "") { setshow(false) } else { setshow(true); } setsearchTerms(event.target.value); setvalue(event.target.value) }}></input>
                         </div>
                         {show && <div className={styles.navbar_innertwo_inner}>
                             {

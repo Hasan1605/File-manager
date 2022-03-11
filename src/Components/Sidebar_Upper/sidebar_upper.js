@@ -1,5 +1,4 @@
-import React, { useState, useContext } from "react";
-import DivInput from "../Div_Input/Div_input";
+import React, { useContext } from "react";
 import logo from "../../Images/logo.png";
 import logo1 from "../../Images/logo (1).png";
 import { FiFolderPlus, FiFilePlus } from "react-icons/fi";

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Lock from "./Components/Lock/Lock";
+
 import HomeExplorer from "./pages/homeExplorer";
 import Home from "./pages/Home";
 import "./styles/main.scss";
