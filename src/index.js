@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app';
+import App from './App';
 import { GlobalStyles } from './global-styles';
 if (localStorage.getItem('CompleteStructure') === null) {
   localStorage.setItem('CompleteStructure', JSON.stringify(

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import HomeExplorer from "./pages/homeExplorer";
 import Home from "./pages/Home";
 import "./styles/main.scss";
