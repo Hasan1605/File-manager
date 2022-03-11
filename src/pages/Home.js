@@ -25,7 +25,7 @@ export default function Home(props) {
                 </div>
             </div>
             <div className={styles.sideHome}>
-                <Form className={styles.form} buttonName={buttonName} savechanges={() => { props.savechanges() }} whichone={false} />
+                <Form className={styles.form} mode={true} buttonName={buttonName} savechanges={() => { props.savechanges() }} whichone={false} />
             </div>
         </div>);
 }
