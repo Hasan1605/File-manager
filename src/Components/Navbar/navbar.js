@@ -3,7 +3,7 @@ import styles from "./navbar.module.scss"
 import { IoIosAddCircleOutline, IoIosSunny, IoIosSearch, IoIosMoon } from "react-icons/io";
 import { FiSettings } from "react-icons/fi"
 import { RiFolder3Fill, RiFile2Fill } from "react-icons/ri";
-
+import DivInput from "../Div_Input/Div_input";
 import Context from "../Context/Context";
 
 
@@ -12,7 +12,7 @@ export default function Navbar(props) {
     const [searchTerms, setsearchTerms] = useState("");
     const [addbutton, setaddButton] = useState(false);
 
-
+    const [index, setindex] = useState("0");
     const [show, setshow] = useState(false)
 
     const [value, setvalue] = useState("");
@@ -28,7 +28,7 @@ export default function Navbar(props) {
                 <div className={styles.navbar_main_inner}>
                     <div className={styles.navbar_left_outer} >
                         <div className={styles.navbar_left} onClick>
-                            <IoIosSearch style={{ marginLeft: "15px" }} /><input value={value} style={reader.mode ? {} : { color: "white" }} placeholder="Search Files or Folders" onChange={(event) => { if (event.target.value === "") { setshow(false) } else { setshow(true); } setsearchTerms(event.target.value); setvalue(event.target.value) }}></input>
+                            <IoIosSearch style={{ marginLeft: "15px" }} /><input value={value} placeholder="Search Files or Folders" onChange={(event) => { if (event.target.value === "") { setshow(false) } else { setshow(true); } setsearchTerms(event.target.value); setindex("100"); setvalue(event.target.value) }}></input>
                         </div>
                         {show && <div className={styles.navbar_innertwo_inner}>
                             {
@@ -57,10 +57,10 @@ export default function Navbar(props) {
                         <button className={styles.setting} onClick={() => { props.reset() }}><FiSettings /></button>
                     </div>
                     <div className={styles.navbar_dropDown} style={addbutton ? { display: "flex" } : { display: "none" }}>
-                        <button onClick={() => { if (reader.Add_folder === false && reader.Add_file === false) { reader.Changeopac(true); reader.updatefile(true) } }}>
+                        <button onClick={() => { if (reader.Add_folder === false && reader.Add_file === false) { reader.Changeopac(true); reader.updatefile(true); handleAddClick(); } }}>
                             {<RiFile2Fill style={{ marginRight: "10px", fontSize: "20px" }} />}
                             Add File</button>
-                        <button onClick={() => { if (reader.Add_folder === false && reader.Add_file === false) { reader.Changeopac(true); reader.updatefolder(true) } }}
+                        <button onClick={() => { if (reader.Add_folder === false && reader.Add_file === false) { reader.Changeopac(true); reader.updatefolder(true); handleAddClick(); } }}
                         >{<RiFolder3Fill style={{ marginRight: "10px", fontSize: "20px" }} />}Add Folder</button>
                     </div>
                 </div>
@@ -68,14 +68,3 @@ export default function Navbar(props) {
         </div >
     )
 }
-
-// {
-//     Add_folder ? <DivInput mode={reader.mode} Type={"Folder"}
-//         Cancel_File={() => { localStorage.setItem('Add_file', false); setAdd_file(false) }} Cancel_Folder={() => { localStorage.setItem('Add_folder', false); setAdd_folder(false) }} /> : <></>
-// }
-// {
-//     Add_file ? <DivInput mode={reader.mode} Type={"File"}
-//         Cancel_Folder={() => { localStorage.setItem('Add_file', false); setAdd_file(false) }}
-//     /> : <></>
-// }
-

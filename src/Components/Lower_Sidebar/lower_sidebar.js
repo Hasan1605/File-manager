@@ -11,8 +11,6 @@ export default function Lower_sidebar(props) {
     const reader = useContext(Context);
     const [renamefolder, setrenamefolder] = useState(false)
     var path_reader = (reader.path_reader);
-    console.log();
-    console.log("HEllo");
     var x = [];
     var changed = JSON.parse(localStorage.getItem('CompleteStructure'));
     var variable = changed;
@@ -41,7 +39,7 @@ export default function Lower_sidebar(props) {
         return (<>
             <div className={styles.Input_main}>
                 <div className={styles.file_showing_div}>
-                    <h1 style={{ margin: "20px", borderBottom: "solid 1px grey", textAlign: "center" }}>{props.value.title}</h1>
+                    <h1 style={{ margin: "20px", borderBottom: "solid 1px grey" }}>{props.value.title}</h1>
                     <div className={styles.file_showing_div_inner}>
                         <textarea value={value} onChange={(event) => {
                             var x = event.target.value;
@@ -66,7 +64,7 @@ export default function Lower_sidebar(props) {
         const [renamefile, setrenamefile] = useState(false);
         const reader = useContext(Context);
         var z;
-        console.log(props.num);
+
         return (<>
             <div className={styles.folder} >
                 <img src={reader.mode ? Fileimag : FileimagDark} alt="Fileimage" onClick={() => { setshow(true) }}></img>
@@ -74,7 +72,11 @@ export default function Lower_sidebar(props) {
                     console.log(event.key);
                     if (event.key === "Enter") {
                         props.file.name = z;
-                        console.log(props.file.name);
+                        var w = props.file.insearch;
+                        var x = JSON.parse(localStorage.getItem('storedValues'));
+                        console.log(x[w]);
+                        x[w].firstone = z;
+                        localStorage.setItem('storedValues', JSON.stringify(x));
                         localStorage.setItem('CompleteStructure', JSON.stringify(variable));
                         reader.update()
                     }
@@ -99,10 +101,11 @@ export default function Lower_sidebar(props) {
             }</>)
     }
     function Div(props) {
-        // const [show, setshow] = useState(false);
+
         return (<>
             {
                 props.File.map((file, key) => {
+                    { console.log(key); }
                     return (<>
                         <DivInner file={file} Wholefile={props.File} num={key} marg={props.marg} />
                     </>)
@@ -142,7 +145,11 @@ export default function Lower_sidebar(props) {
                                         if (event.key === "Enter") {
 
                                             Structure.name = z;
-                                            // console.log(props.file.name);
+                                            var w = Structure.insearch;
+                                            var x = JSON.parse(localStorage.getItem('storedValues'));
+                                            console.log(x[w]);
+                                            x[w].firstone = z;
+                                            localStorage.setItem('storedValues', JSON.stringify(x));
                                             localStorage.setItem('CompleteStructure', JSON.stringify(variable));
                                             setrenamefolder(false)
                                             reader.update()

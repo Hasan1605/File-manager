@@ -8,22 +8,32 @@ var variable = JSON.parse(localStorage.getItem('CompleteStructure'))
 function Input(props) {
     const [value, setvalue] = useState(props.value.content)
     return (<>
-        <div className={styles.file_showing_div}>
-            <h1 style={{ margin: "20px", borderBottom: "solid 1px grey", textAlign: "center" }}>{props.value.title}</h1>
-            <div className={styles.file_showing_div_inner}>
-                <textarea value={value} onChange={(event) => {
-                    var x = event.target.value;
-                    console.log(x);
-                    setvalue(x);
-                }} />
-            </div>
-            <div className={styles.file_div_button}>
-                <button onClick={() => { props.cancel() }}>Cancel</button>
-                <button onClick={() => {
-                    props.value.content = value;
-                    localStorage.setItem('CompleteStructre', variable);
-                    props.cancel()
-                }}>Save Changes</button>
+        <div className={styles.Input_main}>
+
+            <div className={styles.file_showing_div}>
+                <h1 style={{ margin: "20px", borderBottom: "solid 1px grey" }}>{props.value.title}</h1>
+                <div className={styles.file_showing_div_inner}>
+                    <textarea value={value} onChange={(event) => {
+                        var x = event.target.value;
+                        console.log(x);
+                        setvalue(x);
+                    }} />
+                </div>
+                <div className={styles.file_div_button}>
+                    <button onClick={() => { props.cancel() }}>Cancel</button>
+
+                    <button onClick={() => {
+                        props.value.content = value;
+                        localStorage.setItem('CompleteStructre', variable);
+                        props.cancel()
+                    }} onKeyPress={(event) => {
+                        if (event.key === 'Enter') {
+                            props.value.content = value;
+                            localStorage.setItem('CompleteStructre', variable);
+                            props.cancel()
+                        }
+                    }}>Save Changes</button>
+                </div>
             </div>
         </div>
     </>)
@@ -33,7 +43,7 @@ function DivInner(props) {
     const reader = useContext(Context);
     const background = (reader.mode) ? "#1a8fe3" : "#00406c";
     return (<>
-        <div className={styles.Folders_div_inner} style={show ? { marginLeft: (props.marg), backgroundColor: background } : { marginLeft: (props.marg) }} onClick={() => { setshow(true) }}>
+        <div className={styles.Folders_div_inner} style={show ? { marginLeft: (props.marg), backgroundColor: background } : { marginLeft: (props.marg) }} onClick={() => { setshow(!show) }}>
             <p>{
                 <FiFile style={{ marginRight: "5px" }} />
             }{props.file.name}</p>
@@ -49,7 +59,7 @@ function FirstDivInner(props) {
     const reader = useContext(Context);
     const background = (reader.mode) ? "#1a8fe3" : "#00406c";
     return (<>
-        <div className={styles.Folders_div} style={show ? { marginLeft: (0), backgroundColor: background } : { marginLeft: (0) }} onClick={() => { setshow(true) }}>
+        <div className={styles.Folders_div} style={show ? { marginLeft: (0), backgroundColor: background } : { marginLeft: (0) }} onClick={() => { setshow(!show) }}>
             <p>{
                 <FiFile style={{ marginRight: "5px" }} />
             }{props.file.name}</p>
@@ -61,7 +71,7 @@ function FirstDivInner(props) {
 }
 
 function Div(props) {
-
+    const reader = useContext(Context);
     return (<>
         {
             props.File.map((file, key) => {
@@ -97,7 +107,7 @@ export default function FilesandFolders(props) {
                                         reader.update();
                                     } else {
                                         var x = path_reader;
-                                        while (x.length !== len) {
+                                        while (x.length != len) {
                                             x.pop()
                                         }
                                         localStorage.setItem('currentpath', JSON.stringify(x));
@@ -124,7 +134,7 @@ export default function FilesandFolders(props) {
                     return (
                         <>
                             <div className={styles.Folders_div} style={len_main > 0 && path_reader[0] === key ? { backgroundColor: background } : {}} onClick={() => {
-                                console.log(len_main);
+
                                 if (len_main === 0) {
                                     path_reader.push(key);
                                     localStorage.setItem('currentpath', JSON.stringify(path_reader));
